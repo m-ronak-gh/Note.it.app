@@ -28,7 +28,7 @@ It provides a clean and intuitive interface for creating, reading, updating, and
 - **Sort Notes**: Automatically displays newest notes first
 
 ### Technical Features
-- **Rate Limiting**: API protection using Upstash Redis
+- **Rate Limiting**: API protection using Express rate limiting
 - **Responsive Design**: Mobile-friendly interface with DaisyUI components
 - **Real-time Feedback**: Toast notifications for user actions
 - **Error Handling**: Comprehensive error management and user feedback
@@ -52,7 +52,7 @@ It provides a clean and intuitive interface for creating, reading, updating, and
 - **MongoDB** - NoSQL database
 - **Mongoose** - MongoDB object modeling
 - **CORS** - Cross-origin resource sharing
-- **Upstash Redis** - Rate limiting and caching
+- **Express rate limit** - Rate limiting and API protection
 - **dotenv** - Environment variable management
 
 ### Development Tools
@@ -68,8 +68,7 @@ Note.it/
 ├── backend/
 │   ├── src/
 │   │   ├── config/
-│   │   │   ├── db.js              # Database configuration
-│   │   │   └── upstash.js         # Seting ratelimit here
+│   │   │   └── db.js              # Database configuration
 │   │   ├── controllers/
 │   │   │   └── notesController.js # API route handlers
 │   │   ├── middleware/
@@ -110,13 +109,12 @@ Note.it/
 - Node.js
 - npm
 - MongoDB (for database)
-- Upstash Redis account (for rate limiting)
 
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/m-ronak-gh/Note.it.git
-cd Note.it
+git clone https://github.com/m-ronak-gh/Note.it.app.git
+cd Note.it.app
 ```
 
 ### Environment Variables
@@ -131,10 +129,6 @@ NODE_ENV=development
 MONGODB_URI=mongodb://your_url_here
 # OR for MongoDB Atlas:
 # MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/
-
-# Rate Limiting (Upstash Redis)
-UPSTASH_REDIS_REST_URL=your_upstash_redis_url
-UPSTASH_REDIS_REST_TOKEN=your_upstash_redis_token
 ```
 
 ### Full Stack Development
